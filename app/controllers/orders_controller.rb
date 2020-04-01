@@ -3,11 +3,6 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @line_items = LineItem.where(order_id: @order.id)
-    
-    @line_items.each do |item|
-      puts item.product.id
-      puts item.product.name
-      puts item.product.image
     end
   end
 
