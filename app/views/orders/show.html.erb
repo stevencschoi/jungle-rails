@@ -2,13 +2,13 @@
 
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
+    <h5> 
+      <%= @order.email %>
+    </h5>
   </header>
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
-    <h5>Your email: 
-      <%= @order.email %>
-    </h5>
 
     <table class="table table-bordered">
       <thead>
