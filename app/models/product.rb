@@ -1,5 +1,9 @@
 class Product < ActiveRecord::Base
 
+  def in_stock?
+    quantity > 0
+  end
+
   monetize :price_cents, numericality: true
   mount_uploader :image, ProductImageUploader
 
