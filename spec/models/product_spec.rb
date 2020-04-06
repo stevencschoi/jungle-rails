@@ -18,21 +18,18 @@ RSpec.describe Product, type: :model do
     it "does not save if price is missing" do
       category = Category.create(name: "Animals")
       product = Product.create(name: "cats", price: nil, quantity: 2, category: category)
-      puts product.errors.full_messages
       expect(product.errors.full_messages).to include "Price can't be blank"
     end
     
     it "does not save if price is missing" do
       category = Category.create(name: "Animals")
       product = Product.create(name: "cats", price: 5000, quantity: nil, category: category)
-      puts product.errors.full_messages
       expect(product.errors.full_messages).to include "Quantity can't be blank"
     end
     
     it "does not save if category is missing" do
       category = Category.create(name: "Animals")
       product = Product.create(name: "cats", price: 5000, quantity: 2, category: nil)
-      puts product.errors.full_messages
       expect(product.errors.full_messages).to include "Category can't be blank"
     end
   end
