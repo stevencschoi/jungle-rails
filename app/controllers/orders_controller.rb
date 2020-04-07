@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @line_items = LineItem.where(order_id: @order.id)
-    end
   end
 
   def create
@@ -54,8 +53,8 @@ class OrdersController < ApplicationController
         total_price: product.price * quantity
       )
     end
+    
     order.save!
     order
   end
-
 end

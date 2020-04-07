@@ -17,13 +17,9 @@ RSpec.feature "Visitor navigates from home page to product detail page", type: :
     end
   end
 
-  xscenario "They see product details" do
-    # ACT
+  scenario "They see product details" do
     visit root_path
     first('.product').click_link('Details')
-    # DEBUG /
     expect(page).to have_css('.products-show')
-    # save_screenshot
   end
-
 end

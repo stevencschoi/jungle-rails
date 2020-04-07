@@ -98,7 +98,7 @@ RSpec.describe User, type: :model do
         password_confirmation: "123"
         )
         userA = User.authenticate_with_credentials(user.email, user.password)
-      expect(userA).to be true
+      expect(userA.id).to be user.id
     end
 
     it "should login in user with capital letters in email" do
@@ -110,7 +110,7 @@ RSpec.describe User, type: :model do
         password_confirmation: "123"
         )
         userA = User.authenticate_with_credentials('ABc@abc.com', user.password)
-      expect(userA).to be true
+      expect(userA.id).to be user.id
     end
 
     it "should login in user with spaces in email" do
@@ -122,7 +122,7 @@ RSpec.describe User, type: :model do
           password_confirmation: "123"
           )
           userA = User.authenticate_with_credentials("  abc@abc.com ", user.password)
-        expect(userA).to be true
+        expect(userA.id).to be user.id
       end
   end
 end
