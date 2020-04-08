@@ -2,7 +2,7 @@
 
 A mini e-commerce application built with Rails 4.2.
 
-Users will be able to sort by product category, add items to their cart and checkout. The Stripe API was used to simulate credit card payments and an account is required to view the order confirmation screen.
+Users will be able to sort by product category, add items to their cart and checkout. The Stripe API was used to simulate credit card payments and [an account is required](https://dashboard.stripe.com/register) to view the order confirmation screen.
 
 ## Setup
 
